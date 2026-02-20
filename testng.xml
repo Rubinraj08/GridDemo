@@ -2,7 +2,7 @@
 
   <test name="Chrome_Test">
     <parameter name="browser" value="chrome"/>
-    <parameter name="gridUrl" value="http://172.21.224.138:4444/wd/hub"/>
+    <parameter name="gridUrl" value="http://localhost:4444/wd/hub"/>
     <classes>
       <class name="demo.GridLoginTest"/>
     </classes>
@@ -10,7 +10,7 @@
 
   <test name="Firefox_Test">
     <parameter name="browser" value="firefox"/>
-    <parameter name="gridUrl" value="http://172.21.224.138:4444/wd/hub"/>
+    <parameter name="gridUrl" value="http://localhost:4445/wd/hub"/>
     <classes>
       <class name="demo.GridLoginTest"/>
     </classes>
