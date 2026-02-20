@@ -10,6 +10,19 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      selenium-chrome:
+        image: selenium/standalone-chrome:4.21.0
+        ports:
+          - 4444:4444
+        options: --shm-size=2g
+
+      selenium-firefox:
+        image: selenium/standalone-firefox:4.21.0
+        ports:
+          - 4445:4444
+        options: --shm-size=2g
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,8 +34,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build and run tests
-        run: |
-          mvn -B clean test \
-            -DsuiteFile=testng.xml \
-            -Dbrowser=chrome \
-            -DgridUrl=http://172.21.224.138:4444/wd/hub
+        run: mvn -B clean test --file pom.xml
