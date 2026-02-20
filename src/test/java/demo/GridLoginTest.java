@@ -30,7 +30,8 @@ public class GridLoginTest {
 
  
 
-    @Parameters({"browser", "gridUrl"}) 
+    @SuppressWarnings("deprecation")
+	@Parameters({"browser", "gridUrl"}) 
 
     @BeforeMethod 
 
