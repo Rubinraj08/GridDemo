@@ -34,4 +34,5 @@ jobs:
           distribution: 'temurin'
 
       - name: Build and run tests
-        run: mvn -B clean test --file pom.xml
+        run: clean test -DsuiteFile=testng.xml
+
